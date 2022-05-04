@@ -15,9 +15,9 @@ function onPlay (data) {
 
 function pageUpdate() {
     const currentTime = localStorage.getItem(LOCALSTORAGE_KEY);
-    if (!currentTime) {
-        return
-    } player.setCurrentTime(currentTime);
+    if (currentTime) {
+        player.setCurrentTime(currentTime);
+    } 
 };
 
     player.getVideoTitle().then(function(title) {
