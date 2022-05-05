@@ -30,10 +30,13 @@ function onFormInput(e) {
 
 function populateTextarea() {
     const savedFormData = JSON.parse(localStorage.getItem(STORAGE_KEY));
-    if (savedFormData) {
-        refs.emailEl.value = savedFormData.email;
-        refs.messageEl.value = savedFormData.message;
-        formData.email = savedFormData.email;
+    if (savedFormData.email) {
+        refs.emailEl.value = savedFormData.email;       
+        formData.email = savedFormData.email;      
+        }
+    if (savedFormData.message) {        
+        refs.messageEl.value = savedFormData.message;        
         formData.message = savedFormData.message;
+        
     }
 };
